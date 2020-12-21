@@ -1,5 +1,13 @@
-#! python3 
-# ^ Note: Windows only
+#  Python3 code for queue-bert. Initiates serial communication over the specified port to the Arduino, scrapes the TSOps webpage for data, sends data to the Arduino, 
+#  receives reply from Arduino and prints to console.
+#  
+#  A lot of this code was sourced from user Robin2's post on the Arduino forums (https://forum.arduino.cc/index.php?topic=225329.msg1810764#msg1810764)
+#  and modified for my use.
+
+
+#! python3
+    # shebang line (for Windows only)
+
 
 #  Function Definitions
 
@@ -171,7 +179,7 @@ waitForArduino() # wait until Arduino confirms it is ready to receive data
 import re
 
 runInt = 5.0 # how often to run the loop, in seconds
-offset = 3.0 # offset from clock, in seconds (i.e. 00:00:00 + offset). Allows time for tsops to update before scraping new values
+offset = 4.0 # offset from clock, in seconds (i.e. 1:00:00 + offset). Allows time for tsops to update before scraping new values
 
 try:
     while True:

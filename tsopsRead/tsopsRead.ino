@@ -1,9 +1,10 @@
-/* data scraped := [int ENGPOS, int NOCPOS, int STALENESS, int INCALLS, int OUTCALLS] 
-
-NOTES: 
-	- int xxxPOS can also be N/A, so need to account for this in Python code
-	- int STALENESS will be converted from days.hours:min:sec to seconds in Python code.
-		- It can also be '>1 week', so need to account for that in Python code
+/* 
+ *  Arduino code for queue-bert. Opens Arduino for serial communication over USB to the PC, receives data, replies to PC, writes data to LCD and initiates
+ *  sensory queues (LEDs and piezo speaker).
+ *  
+ *  A lot of this code was sourced from user Robin2's post on the Arduino forums (https://forum.arduino.cc/index.php?topic=225329.msg1810764#msg1810764)
+ *  and modified for my use.
+ *  
 */
 
 #include <LiquidCrystal.h>
