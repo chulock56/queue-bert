@@ -155,17 +155,20 @@ void replyToPC() {
 void updateLCD() {
 
   if (newEngPos != EngPos) {
-    // print new ENG position to screen
+      // print new ENG position to screen
     lcd.setCursor(4,0);
     lcd.print("  "); // clear previous entry
     lcd.setCursor(4,0);
     lcd.print(newEngPos);
 
+      // flash lights and make sound, if necessary
+    audVisAlert();
+
     EngPos = newEngPos;
   }
   
   if (newNocPos != NocPos) {
-    // print new NOC position to screen
+      // print new NOC position to screen
     lcd.setCursor(13,0);
     lcd.print("  "); // clear previous entry
     lcd.setCursor(13,0);
@@ -183,9 +186,6 @@ void updateLCD() {
 
     strcpy(Stale, newStale); 
   }
-  
-  // flash lights and make sound, if necessary
-  audVisAlert();
 }
 
 //=============
