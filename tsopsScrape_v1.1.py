@@ -87,11 +87,15 @@ def runControl(td):
 def scrapeTsops():
     
     # Scrape queue positions
-    queuePosTableEl = driver.find_element_by_tag_name('app-queue-position')
-    queuePosTableText = queuePosTableEl.text
-    print("Position data scraped:\n" + queuePosTableText)
+    try:
+        queuePosTableEl = driver.find_element_by_tag_name('app-queue-position')
+        queuePosTableText = queuePosTableEl.text
+        print("Position data scraped:\n" + queuePosTableText)
 
-    queuePosTableVals = re.findall(r'\d+|N/A', queuePosTableText) # retrieve queue positions (either int or 'N/A')
+        queuePosTableVals = re.findall(r'\d+|N/A', queuePosTableText) # retrieve queue positions (either int or 'N/A')
+    except:
+        print("Failed to scrape current queue positions. Continuing...")
+        queuePosTableVals = []
 
     if len(queuePosTableVals) != 0:
         for val in queuePosTableVals:
@@ -104,10 +108,14 @@ def scrapeTsops():
 
 
     # Scrape staleness value
-    agentTableEl = driver.find_element_by_tag_name('app-agent-table')
-    agentTableText = agentTableEl.text
+    try:
+        agentTableEl = driver.find_element_by_tag_name('app-agent-table')
+        agentTableText = agentTableEl.text
 
-    myAgentRowMatch = re.search(r'Andrew Chulock ([1-7]?\.?\d\d:\d\d:\d\d|> 1 week)', agentTableText) # find either 9.99:99:99, 99:99:99, or > 1 week
+        myAgentRowMatch = re.search(r'Andrew Chulock ([1-7]?\.?\d\d:\d\d:\d\d|> 1 week)', agentTableText) # find either 9.99:99:99, 99:99:99, or > 1 week
+    except:
+        print("Failed to scrape current staleness. Continuing...")
+        myAgentRowMatch = None
 
     if myAgentRowMatch != None:
         staleStr = myAgentRowMatch.group(1)
@@ -116,7 +124,7 @@ def scrapeTsops():
     print("Staleness data scraped + parsed:\n" + staleStr)
 
     tsopsData = '<' + queuePosTableStr + ',' + staleStr + '>' # append start and end markers
-    print(tsopsData)
+    # print(tsopsData)
     
     return tsopsData
 
