@@ -90,7 +90,7 @@ def scrapeTsops():
     try:
         queuePosTableEl = driver.find_element_by_tag_name('app-queue-position')
         queuePosTableText = queuePosTableEl.text
-        print("Position data scraped:\n" + queuePosTableText)
+        # print("Position data scraped:\n" + queuePosTableText)
 
         queuePosTableVals = re.findall(r'\d+|N/A', queuePosTableText) # retrieve queue positions (either int or 'N/A')
     except:
@@ -121,7 +121,7 @@ def scrapeTsops():
         staleStr = myAgentRowMatch.group(1)
     else:
         staleStr = '9.99:99:99'
-    print("Staleness data scraped + parsed:\n" + staleStr)
+    # print("Staleness data scraped + parsed:\n" + staleStr)
 
     tsopsData = '<' + queuePosTableStr + ',' + staleStr + '>' # append start and end markers
     # print(tsopsData)
