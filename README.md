@@ -5,6 +5,7 @@ Uses Python3 to scrape the TSOps webpage for desired data, parses it, and sends 
 
 The code here sources code and libraries that are in the public domain and are NOT my own, and therefore the code here is not intended for sale or distribution by anyone.
 
+<img src="https://github.com/chulock56/queue-bert/blob/main/ArduinoStuff/queue-bert.jpg"/>
 
 ## Contents:
 - tsopsRead folder contains the .ino (C++) code that should be uploaded to the Arduino.
