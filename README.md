@@ -25,3 +25,5 @@ The code here sources code and libraries that are in the public domain and are N
 - You must download and install the Arduino IDE to upload the .ino code to the Arduino Uno (or knock-off Arduino)
 - You need an Arduino Uno or similar microcontroller (there are cheaper options online)
 - You need the appropriate hardware (LEDs, LCD screen, piezo speaker, etc. detailed in the parts list)
+
+<img src="https://github.com/chulock56/queue-bert/blob/main/ArduinoStuff/breadboardDiagram.png"/>
