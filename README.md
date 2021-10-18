@@ -8,10 +8,11 @@ The code here sources code and libraries that are in the public domain and are N
 <img src="https://github.com/chulock56/queue-bert/blob/main/ArduinoStuff/queue-bert.jpg"/>
 
 ## Contents:
-- tsopsRead folder contains the .ino (C++) code that should be uploaded to the Arduino.
-- tsopsScrape_v1.X.py file is the Python3 script that should be run from a PC connected to the Arduino. 
+- tsopsRead_NSA / tsopsRead_NoNSA folders contain the .ino (C++) code that should be uploaded to the Arduino.
+  - One should be used if you are a part of the NSA queue, and the other if you do not have the NSA skill. 
+- tsopsScrape_X.X.py file is the Python3 script that should be run from a PC connected to the Arduino. 
   - NOTE: This file must be modified to: specify the port over which serial communication is initiated with the Arduino; specify a directory to install the Chromium web driver; specify the agent's name for which to scrape TSOps data
-- tsopsScrape.bat is provided as a way to run the Python code easily in Windows from a desktop shortcut or from the "Run" dialog. Modify this to point to your Python3 environment directory and location of the tsopsScrape_v1.x.py script.
+- tsopsScrape.bat is provided as a way to run the Python code easily in Windows from a desktop shortcut or from the "Run" dialog. Modify this to point to your Python3 environment directory and location of the tsopsScrape_vX.X.py script.
 - ArduinoStuff folder contains information on the Arduino electrical design including diagrams, photos, etc.
 
 
