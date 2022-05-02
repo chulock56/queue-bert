@@ -179,7 +179,7 @@ endMarker = 62  # '>'
 import time
 
 driver = webdriver.Chrome(executable_path=path, options=options)
-driver.get('https://tsops-dash-phl/?skillGroups=FL_English,FL_NSA,NOC&languages=English')
+driver.get('https://<TSOPsHostname>/?skillGroups=FL_English,FL_NSA,NOC&languages=English')
 
 time.sleep(10)  # wait a bit for page to load
 
